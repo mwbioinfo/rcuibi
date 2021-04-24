@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>stdin</title>
+</head>
+<body>
+<pre>
+
+
+<span style="font-weight:bold;color:green;">
+	[==== vmd ====]	 </span>
+
+<span style="font-style:italic;color:green;">	Export Image
+</span>
+	file -&gt; Render -&gt; Start Rendring
+
+<span style="font-style:italic;color:green;">	Select by residue name
+</span>
+	resname LIG
+
+<span style="font-style:italic;color:green;">	Select by residue number
+</span>
+	resid 1 2 3 4
+
+<span style="font-style:italic;color:green;">	Load Multiple frame
+</span>
+	Graphical Representation -&gt; Trajectory -&gt; replace 'now' with x:y:z x=1(start frrame) y=5(skip frames) z=1000(last frame)
+
+<span style="font-style:italic;color:green;">	Slice protein
+</span>
+	VMD main -&gt; Extention -&gt; Visualization -&gt; Clipping plane tools
+
+<span style="font-style:italic;color:green;">	Density calculation using Volmap
+</span>
+	VMD main -&gt; Extention -&gt; Analysis -&gt; VolMap Tool
+
+<span style="font-style:italic;color:green;">	Align all frames
+</span>
+	VMD main -&gt; Extention -&gt; Analysis -&gt; RMSD Trajectory Tools -&gt; Align
+
+<span style="font-style:italic;color:green;">	Export average Structure in VMD
+</span>
+	'set sel [atomselect top all]' --&gt; 'set pos [measure avpos $sel]' -&gt; '$sel set {x y z} $pos' -&gt; '$sel writepdb avpos.pdb' type in Tk consol
+
+
+</pre>
+</body>
+</html>
